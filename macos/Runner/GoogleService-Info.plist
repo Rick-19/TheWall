@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>9081744655-ki4a172k4mhvlicmkq1968kg5dsk5287.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.9081744655-ki4a172k4mhvlicmkq1968kg5dsk5287</string>
+	<key>API_KEY</key>
+	<string>AIzaSyALhjxTqPk_M9-ddF1XqcHflyT4j3j0KRw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>9081744655</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.thewall.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>thewall-f0d82</string>
+	<key>STORAGE_BUCKET</key>
+	<string>thewall-f0d82.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:9081744655:ios:81c4fe0cc62d84a4a7a27a</string>
+</dict>
+</plist>
