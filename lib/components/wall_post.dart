@@ -93,6 +93,7 @@ class _WallPostState extends State<WallPost> {
           TextButton(
             onPressed: () {
               addComment(_commentTextController.text);
+              setState(() {});
               Navigator.pop(context);
 
               _commentTextController.clear();
@@ -102,6 +103,19 @@ class _WallPostState extends State<WallPost> {
         ],
       ),
     );
+  }
+
+  Future<int> get numberOfComments async {
+    int ctr = 0;
+    final commentDocs = await FirebaseFirestore.instance
+        .collection("User Posts")
+        .doc(widget.postId)
+        .collection("Comments")
+        .get();
+    for (var doc in commentDocs.docs) {
+      ctr++;
+    }
+    return ctr;
   }
 
   void deletePost() {
@@ -223,9 +237,22 @@ class _WallPostState extends State<WallPost> {
                 children: [
                   CommentButton(onTap: showCommentDialog),
                   const SizedBox(height: 5),
-                  const Text(
-                    '0',
-                    style: TextStyle(color: Colors.grey),
+                  FutureBuilder<int>(
+                    future: numberOfComments,
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return CircularProgressIndicator(); // Display loading indicator while fetching the number of comments.
+                      } else if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      } else {
+                        int commentsCount = snapshot.data ??
+                            0; // Get the number of comments, default to 0 if null.
+                        return Text(
+                          '$commentsCount',
+                          style: TextStyle(color: Colors.grey),
+                        );
+                      }
+                    },
                   ),
                 ],
               ),
